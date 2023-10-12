@@ -8,6 +8,7 @@ void game(char,int);
 void move(char,int);
 void winner(char);
 
+
 char Board [9] = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
 int Running = 1;
 
@@ -26,24 +27,42 @@ int main()
 	
 	while(Running){
 	
-  
+  while(Running){
 		printf("\n\n%c Need to Enter >> ",player1);	
 		scanf("%d",&position);
-		game(player1,position);
-		winner(player1);
-	
 		
-  
-
-
+		if(Board[position-1]!= ' '){
+			
+	printf("\n\nEnter Again !!! ");
+	}
+	
+	else {
+		game(player1,position);
+		winner(player1);	
+		break;
+	}
+		
+  }
+	
+	
+while(Running){
 		printf("\n\n%c Need to Enter >> ",player2);		scanf("%d",&position);
+		
+		if(Board[position-1]!= ' '){
+	
+	printf("\n\nEnter Again !!! ");
+	}
+	
+	else  {
+		
 		game(player2,position);
 		winner(player2);
+		break;
+		
+	}
+}
 	
-   
-		
-		
-		
+  		
 	
 	
 	}
@@ -65,8 +84,7 @@ void game(char Player,int Position)
 void board()
 
 {	
-	// Board 
-	
+	// Board 	
 	printf("| %c | %c | %c |\n",Board[0],Board[1],Board[2]);
 		printf("| %c | %c | %c |\n",Board[3],Board[4],Board[5]);
 			printf("| %c | %c | %c |",Board[6],Board[7],Board[8]);	
@@ -84,6 +102,7 @@ void move(char Player,int Position)
 	board();
 	}
 	
+
 	
 	
 
@@ -104,8 +123,7 @@ void winner(char Player)
 		
 		printf("\n\n%c Wins :)",Player);
 		Running = 0;
-	
-	
+		
 		
 		}
 	
@@ -141,6 +159,8 @@ void winner(char Player)
 }
 
 }
+
+
+
     
     
-	
