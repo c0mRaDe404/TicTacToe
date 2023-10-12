@@ -1,2 +1,2 @@
 # TicTacToe
-Just a common TicTacToe
+Just an usual TicTacToe
