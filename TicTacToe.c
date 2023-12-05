@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+
 
 //this is my first open source project
 
@@ -74,7 +74,8 @@ while(Running){
 void game(char Player,int Position)
 {
 	
-	board();		
+	board();
+	printf("\033[H\033[J"); 		
 	move(Player,Position);
 		
 }
@@ -82,12 +83,11 @@ void game(char Player,int Position)
 	
 	
 void board()
-
 {	
 	// Board 	
 	printf("| %c | %c | %c |\n",Board[0],Board[1],Board[2]);
-		printf("| %c | %c | %c |\n",Board[3],Board[4],Board[5]);
-			printf("| %c | %c | %c |",Board[6],Board[7],Board[8]);	
+	printf("| %c | %c | %c |\n",Board[3],Board[4],Board[5]);
+	printf("| %c | %c | %c |",Board[6],Board[7],Board[8]);	
 	}
 	
 	
@@ -98,7 +98,7 @@ void move(char Player,int Position)
 	
 	if(Board[Position-1]==' '){
 	Board[Position-1] = Player;
-	clrscr();
+
 	board();
 	}
 	
